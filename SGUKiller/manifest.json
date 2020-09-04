@@ -1,0 +1,37 @@
+{
+    "manifest_version": 2,
+ 
+    "name": "SGU Killer",
+    "version": "1.0",    
+    "icons": {
+            "16": "images/knife.png",
+            "32": "images/knife.png",
+            "48": "images/knife.png",
+            "64": "images/knife.png",
+            "128": "images/knife.png"
+    },
+ 
+    "content_scripts": [
+        {
+            "matches": [ "https://*/","http://*/"],
+            "js": [ "content_scripts/js.js"],
+            "run_at": "document_end"
+        }
+    ],
+    "permissions": ["http://*/","https://*/", "notifications", "webNavigation", "activeTab", "tabs", "webRequest", "webRequestBlocking", "<all_urls>"],
+    "browser_action": {
+          "default_icon": {
+            "16": "images/knife.png",
+            "32": "images/knife.png",
+            "48": "images/knife.png",
+            "64": "images/knife.png",
+            "128": "images/knife.png"
+          },
+          "default_title": "SGU Killer",
+          "default_popup": "popup/popup.html"
+    },
+	"background": {
+    "scripts": ["background.js"],
+    "persistent": true
+  }
+}
